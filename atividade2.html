@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Atividade 2</h1>
+
+    <nav>
+
+        <ul>
+
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="atividade1a.html">Atividade 1a</a></li>
+            <li><a href="atividade1b.html">Atividade 1b</a></li>
+            <li><a href="atividade2.html">Atividade 2</a></li>
+            <li><a href="atividade3.html">Atividade 3</a></li>
+        </ul>
+    </nav>
+
+    <label for="npeso">Insira seu peso: </label>
+    <input type="text" id="ipeso" name="npeso" value="65.0"> <br>
+
+    <label for="naltura">Insira sua altura: </label>
+    <input type="text" id="ialtura" name="naltura" value="1.75"> <br>
+
+    <button onclick="dados()" id="botao">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+
+
+        function dados() {
+
+            const kg = parseFloat(document.querySelector("#ipeso").value);
+            console.log(kg);
+            const mt = parseFloat(document.querySelector("#ialtura").value);
+            console.log(mt);
+
+            const par = document.getElementById("resultado");
+
+            var med = kg / (mt^2);
+            console.log(med);
+            var msg = '';
+            var cor = '';
+
+            if (med > 18.5 && med < 30) {
+
+                msg = "Normal, continue assim.";
+                cor = "green";
+            } else if (med >= 25 && med < 30 || med >= 17 && med < 18.5) {
+
+                msg = "Alerta, você pode está acima ou abaixo do peso.";
+                cor = "orange";
+            } else {
+
+                msg = "Perigo, você está muito abaixo ou muito acima do seu peso, cuide-se.";
+                cor = "red";
+            }
+
+            par.style.color = cor;
+            par.innerHTML = msg;
+        }
+    </script>
+</body>
+</html>

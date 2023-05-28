@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Atividade 3</h1>
+
+    <nav>
+
+        <ul>
+
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="atividade1a.html">Atividade 1a</a></li>
+            <li><a href="atividade1b.html">Atividade 1b</a></li>
+            <li><a href="atividade2.html">Atividade 2</a></li>
+            <li><a href="atividade3.html">Atividade 3</a></li>
+        </ul>
+    </nav>
+
+    <ul id="myList">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+      
+    <p>Click "Append" to append an item to the end of the list:</p>
+
+    <input type="text" id="iword"> <br>
+
+    <label for="">Vermelho</label>
+    <input type="radio" name="ncores" id="icores" value="red"> <br>
+    <label for="">Azul</label>
+    <input type="radio" name="ncores" id="icores" value="blue"> <br>
+    <label for="">Verde</label>
+    <input type="radio" name="ncores" id="icores" value="green"> <br>
+      
+    <button onclick="myFunction()">Append</button>
+      
+    <script>
+        function myFunction() {
+
+            // MUDAR COR
+            var cor = document.querySelector('input[name="ncores"]:checked').value;
+            console.log(cor); //+
+
+            // ACRESCENTAR TEXTO
+            var msg = document.querySelector('#iword').value;
+
+            // Create an "li" node:
+            const node = document.createElement("li");
+            
+            // Create a text node:
+            const textnode = document.createTextNode(msg);
+
+            // Append the text node to the "li" node:
+            node.appendChild(textnode);
+            
+            // Append the "li" node to the list:
+            document.getElementById("myList").appendChild(node); 
+            document.getElementById("myList").appendChild(node).style.color = cor; 
+        }
+        </script>
+</body>
+</html>

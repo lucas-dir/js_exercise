@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="nota1">
+
+    <input type="text" id="nota2">
+
+    <button onclick="media()">Enviar</button>
+
+    <h2>Média</h2>
+    <p id="media"></p>
+
+    <h2>Situação</h2>
+    <p id="approved"></p>
+
+    <script>
+
+        function media() {
+
+            var nota1 = document.querySelector('#nota1');
+            var nota2 = document.querySelector('#nota2');
+
+            var valor1 = parseFloat(nota1.value);            
+            var valor2 = parseFloat(nota2.value);
+
+            var med = (valor1 + valor2)/2 ;
+
+            var cor = 'black';
+            var msg = '';
+
+            if (med >= 6) {
+
+                cor = 'blue';
+                msg = "Aprovado";
+            } else {
+                
+                cor = 'red';
+                msg = 'Reprovado';
+            }
+
+            let media = document.getElementById("media");
+            let aprovado = document.getElementById("approved");
+    
+            media.innerHTML = med;
+            aprovado.style.color = cor;
+            aprovado.innerHTML = msg;
+        }
+
+    </script>
+</body>
+</html>

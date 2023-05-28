@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav>
+
+        <ul>
+
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="atividade1a.html">Atividade 1a</a></li>
+            <li><a href="atividade1b.html">Atividade 1b</a></li>
+            <li><a href="atividade2.html">Atividade 2</a></li>
+            <li><a href="atividade3.html">Atividade 3</a></li>
+        </ul>
+    </nav>
+
+    
+    <h2>Média</h2>
+    <p id="media"></p>
+
+    <h2>Situação</h2>
+    <p id="approved"></p>
+
+    <script>
+
+        let media = document.getElementById("media");
+        let aprovado = document.getElementById("approved");
+
+        let n1 = parseFloat(prompt('nota 1')); 
+        let n2 = parseFloat(prompt('nota 2'));
+
+        var cor = 'black';
+        var msg = '';
+        
+        var med = parseFloat((n1 + n2)/2);
+
+        if (med >= 6) {
+
+            cor = 'blue';
+            msg = "Aprovado";
+        } else {
+            
+            cor = 'red';
+            msg = 'Reprovado';
+        }
+
+        media.innerHTML = med;
+        aprovado.style.color = cor;
+        aprovado.innerHTML = msg;
+    </script>
+</body>
+</html>
